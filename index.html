@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06111f">
+  <title>پرسش‌های متداول | مسیر طراحی پروتئین با هوش مصنوعی</title>
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="grid-overlay"></div>
+
+
+  <main>
+    <section id="mapScreen" class="map-screen">
+      <div class="intro">
+        <div style="text-align: center; width: 100%; margin-bottom: 28px;">
+
+  <p style="margin: 0 0 12px; font-size: 14px;">
+    انجمن زیست‌شناسی | شبکه نخبگان ایران
+  </p>
+
+  <h2 style="margin: 0 0 8px; font-size: 28px; font-weight: 800;">
+    PROTEINO | پروتئین نو
+  </h2>
+
+  <p style="margin: 0; font-size: 13px; opacity: 0.75;">
+    طراحی و شبیه‌سازی پروتئین به کمک هوش مصنوعی
+  </p>
+
+</div>
+        <p class="eyebrow">AI × PROTEIN DESIGN</p>
+        <h1>پرسش‌های متداول دوره</h1>
+        <p class="intro-subtitle">برای آشنایی بیشتر با مسیر یادگیری، ایستگاه‌ها را کاوش کنید.</p>
+      </div>
+
+      <div class="map-instruction">
+        <span class="instruction-line"></span>
+        <span>یک ایستگاه را انتخاب کنید</span>
+        <span class="instruction-line"></span>
+      </div>
+
+      <div class="protein-world" id="proteinWorld">
+        <div class="world-halo"></div>
+        <div class="world-ring ring-a"></div>
+        <div class="world-ring ring-b"></div>
+        <div class="world-ring ring-c"></div>
+
+        <div id="threeContainer" class="three-container" aria-label="مدل سه‌بعدی تزئینی پروتئین"></div>
+
+        <div class="core-label">
+          <span class="core-label-top">AI × BIOLOGY</span>
+          <strong>PROTEIN</strong>
+          <small>DESIGN JOURNEY</small>
+        </div>
+
+        <div id="stationLayer" class="station-layer" aria-label="۱۱ ایستگاه پرسش و پاسخ">
+          <button class="station station-1" data-index="0"><span>01</span><small>پیش‌نیازها</small></button>
+          <button class="station station-2" data-index="1"><span>02</span><small>سرفصل‌ها</small></button>
+          <button class="station station-3" data-index="2"><span>03</span><small>مدرسان</small></button>
+          <button class="station station-4" data-index="3"><span>04</span><small>زمان‌بندی</small></button>
+          <button class="station station-5" data-index="4"><span>05</span><small>ثبت‌نام</small></button>
+          <button class="station station-6" data-index="5"><span>06</span><small>تمرین عملی</small></button>
+          <button class="station station-7" data-index="6"><span>07</span><small>پرسش و پاسخ</small></button>
+          <button class="station station-8" data-index="7"><span>08</span><small>گواهی</small></button>
+          <button class="station station-9" data-index="8"><span>09</span><small>محتوای دوره</small></button>
+          <button class="station station-10" data-index="9"><span>10</span><small>همکاری</small></button>
+          <button class="station station-11" data-index="10"><span>11</span><small>هزینه</small></button>
+          <button class="station station-12" data-index="11"><span>12</span><small>تخفیف</small></button>
+        </div>
+      </div>
+
+      <div class="map-footer">
+        <span><i class="tiny-orb"></i> 12 KNOWLEDGE STATIONS</span>
+        <span>برای شروع روی یکی از شماره‌ها کلیک کنید</span>
+      </div>
+    </section>
+
+    <section id="detailScreen" class="detail-screen" hidden>
+      <div class="detail-topbar">
+        <button class="back-button" id="backButton" type="button">← <span>بازگشت به نقشه</span></button>
+        <span class="detail-kicker">PROTEIN DESIGN JOURNEY</span>
+        <span class="detail-progress" id="counter">01 / 12</span>
+      </div>
+
+      <div class="detail-layout">
+        <div class="detail-visual">
+          <div class="detail-orbit orbit-one"></div>
+          <div class="detail-orbit orbit-two"></div>
+          <div class="detail-visual-core">
+            <span class="visual-number" id="visualNumber">01</span>
+            <span class="visual-caption">KNOWLEDGE STATION</span>
+          </div>
+          <div class="visual-particle particle-a"></div>
+          <div class="visual-particle particle-b"></div>
+          <div class="visual-particle particle-c"></div>
+        </div>
+
+        <article class="qa-card" id="qaCard">
+          <div class="qa-card-head">
+            <span class="question-label"><i></i> پرسش متداول</span>
+            <span class="question-index" id="questionIndex">STATION 01</span>
+          </div>
+          <h2 id="question"></h2>
+          <div class="answer-divider"><span></span></div>
+          <p id="answer"></p>
+          <div class="qa-navigation">
+            <button id="prevBtn" class="nav-button secondary" type="button">→ قبلی</button>
+            <button id="nextBtn" class="nav-button primary" type="button">بعدی ←</button>
+          </div>
+        </article>
+      </div>
+      <div class="detail-bottom"><span>AI × PROTEIN DESIGN</span><span>یک مسیر برای کشف دنیای طراحی پروتئین</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>PROTEIN FAQ EXPERIENCE</span>
+    <span>DESIGNED FOR LEARNING</span>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
